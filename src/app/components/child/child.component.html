@@ -1,0 +1,21 @@
+<div *ngIf="sharedUser">
+
+  <h2>Child Component</h2>
+
+  <form>
+    <label for="name">Name: &nbsp;</label>
+    <input id="name" name="name" size="30" [(ngModel)]="childUser.name">
+    <br>
+
+    <div style="margin: 8px"></div>
+
+    <label for="email">Mail: &nbsp;</label>
+    <input id="email" name="email" size="30" [(ngModel)]="childUser.email">
+    <br>
+
+  </form>
+
+  <br>
+
+  <button test-data="update" (click)="updateUser()">Update User</button>
+</div>

@@ -1,0 +1,20 @@
+<table>
+  <thead>
+  <tr>
+    <th>ID</th>
+    <th>Name</th>
+    <th>Mail</th>
+  </tr>
+  </thead>
+
+  <tbody>
+  <tr *ngFor="let user of users">
+    <td>{{ user.id }}&nbsp;&nbsp;</td>
+    <td>{{ user.name }}&nbsp;&nbsp;</td>
+    <td>{{ user.email }}&nbsp;&nbsp;</td>
+    <td>
+      <button (click)="selectUser(user.id)">Select</button>
+    </td>
+  </tr>
+  </tbody>
+</table>

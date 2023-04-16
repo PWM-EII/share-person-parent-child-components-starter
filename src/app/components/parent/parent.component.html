@@ -1,0 +1,41 @@
+<div style="margin: 16px">
+
+  <h2>Parent Component</h2>
+
+  <app-user-list (onParentUserSelected)="onSelectUser($event)"></app-user-list>
+
+  <br>
+
+  <form>
+    <label for="name">Name: &nbsp;</label>
+    <input id="name" name="name" size="30" [(ngModel)]="parentUser.name">
+    <br>
+
+    <div style="margin: 8px"></div>
+
+    <label for="email">Mail: &nbsp;</label>
+    <input id="email" name="email" size="30" [(ngModel)]="parentUser.email">
+    <br>
+
+  </form>
+
+  <br>
+
+  <button [disabled]="parentUser.name === '' || parentUser.email === ''"
+          data-test="save" (click)="saveUser()">Save</button>
+  <span>&nbsp;&nbsp;</span>
+  <button data-test="clean" (click)="cleanUser()">Clean</button>
+  <span>&nbsp;&nbsp;</span>
+  <button *ngIf="this.parentUser.id !== 0"
+          data-test="share" (click)="shareUser()">Share User</button>
+
+  <br>
+  <br>
+
+  <app-child
+    [sharedUser]="sharedUser"
+    (onParentUserUpdated)="onUpdateUser($event)">
+
+  </app-child>
+
+</div>
