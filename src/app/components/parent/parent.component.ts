@@ -35,7 +35,7 @@ export class ParentComponent {
 
   }
 
-  updateUser() {
+  private updateUser() {
 
   }
 
@@ -44,7 +44,7 @@ export class ParentComponent {
   }
 
   cleanUser() {
-    
+
   }
 
 }
