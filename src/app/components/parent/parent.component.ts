@@ -35,14 +35,6 @@ export class ParentComponent {
 
   }
 
-  private updateUser() {
-
-  }
-
-  private createUser() {
-
-  }
-
   cleanUser() {
 
   }

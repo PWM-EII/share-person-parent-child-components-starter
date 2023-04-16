@@ -24,11 +24,4 @@ export class UserListComponent implements OnInit {
 
   }
 
-  private getUsers(): void {
-
-  }
-
-  private getUser(id: number): User | undefined {
-    return undefined;
-  }
 }
