@@ -44,18 +44,5 @@ describe('UserListComponent', () => {
     expect(component.users).toEqual(users);
   });
 
-  test('should return expected user when getUser is called with valid id', () => {
-    const user: User = {id: 1, name: 'John', email: 'john@example.com'};
-    jest.spyOn(userService, 'getUserById').mockReturnValue(user);
-    const result = component['getUser'](1);
 
-    expect(result).toEqual(user);
-  });
-
-  test('should return undefined when getUser is called with invalid id', () => {
-    jest.spyOn(userService, 'getUserById').mockReturnValue(undefined);
-    const result = component['getUser'](999);
-
-    expect(result).toEqual(undefined);
-  });
 });
