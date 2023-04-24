@@ -33,7 +33,9 @@ export class UserService {
 
   // Obtener todos los usuarios
   getUsers(): User[] {
-    return this.users;
+    return this.users.map(
+      user => Object.assign({}, user)
+    );
   }
 
   // Obtener un usuario por ID

@@ -195,5 +195,23 @@ describe('ParentComponent', () => {
     expect(saveButton.disabled).toBeFalsy();
   });
 
+  test('should update user when saveUser is called and parentUser has an id', () => {
+    jest.spyOn(component, 'shareUser');
+
+    const mockUser =
+      { id: 1, name: 'User', email: 'testuser@test.com' };
+    const newMockUser =
+      { id: 1, name: 'Test User', email: 'testuser@test.com' };
+
+    component.sharedUser = mockUser;
+    component.parentUser = newMockUser;
+
+    fixture.detectChanges();
+    const updateUserButton = fixture.nativeElement.querySelector('button[data-test="save"]');
+    updateUserButton.click();
+
+    expect(component.shareUser).toHaveBeenCalled();
+  });
+
 });
 

@@ -44,5 +44,14 @@ describe('UserListComponent', () => {
     expect(component.users).toEqual(users);
   });
 
+  test('should emit user when selectUser is called', () => {
+
+    component.ngOnInit();
+
+    const selectedUser = component.users[0];
+    jest.spyOn(component.onParentUserSelected, 'emit');
+    component.selectUser(selectedUser.id);
+    expect(component.onParentUserSelected.emit).toHaveBeenCalledWith(selectedUser);
+  });
 
 });
